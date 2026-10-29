@@ -1,72 +1,101 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "Operant Health Help Center",
+  "description": "Help for practices using Operant Health: setup, rollout, recording visits, notes, intake and troubleshooting.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#3C583E",
+    "light": "#B7BF9C",
+    "dark": "#2F4631"
   },
-  "favicon": "/favicon.svg",
-  "navigation": {
-    "pages": [
-      {
-        "group": "Getting Started",
-        "pages": [
-          "index",
-          "quickstart"
-        ]
-      }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
+  "background": {
+    "color": {
+      "light": "#FAF6F3",
+      "dark": "#121612"
     }
   },
+  "fonts": {
+    "family": "Inter"
+  },
+  "favicon": "/favicon.png",
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/light.png",
+    "dark": "/logo/dark.png",
+    "href": "https://operanthealth.com"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get started",
+        "pages": [
+          "index",
+          "get-started/set-up-your-practice",
+          "get-started/invite-your-team",
+          "get-started/install-and-sign-in",
+          "get-started/app-tour"
+        ]
+      },
+      {
+        "group": "Roll out at your practice",
+        "pages": [
+          "rollout/overview",
+          "rollout/roles",
+          "rollout/go-live-checklist"
+        ]
+      },
+      {
+        "group": "Before the visit",
+        "pages": [
+          "visits/schedule",
+          "visits/patient-intake"
+        ]
+      },
+      {
+        "group": "During the visit",
+        "pages": [
+          "visits/record-a-visit",
+          "visits/when-the-network-drops"
+        ]
+      },
+      {
+        "group": "After the visit",
+        "pages": [
+          "notes/review-and-sign",
+          "notes/send-to-your-ehr",
+          "notes/forms-and-guides"
+        ]
+      },
+      {
+        "group": "Running your practice",
+        "pages": [
+          "practice/tasks",
+          "practice/document-inbox",
+          "practice/templates-and-macros",
+          "practice/settings"
+        ]
+      },
+      {
+        "group": "Help",
+        "pages": [
+          "troubleshooting/common-issues"
+        ]
+      }
+    ]
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:support@mintlify.com"
+        "label": "Contact support",
+        "href": "mailto:support@operanthealth.com"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Sign in",
+      "href": "https://orthoshealth.ai/sign-in"
     }
   },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
-    }
+  "seo": {
+    "indexing": "navigable"
   }
 }

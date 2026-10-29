@@ -1,33 +1,37 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
-> For Mintlify product knowledge (components, configuration, writing standards),
-> install the Mintlify skill: `npx skills add https://mintlify.com/docs`
+# Operant Health help center
 
-# Documentation project instructions
-
-## About this project
-
-- This is a documentation site built on [Mintlify](https://mintlify.com)
-- Pages are MDX files with YAML frontmatter
-- Configuration lives in `docs.json`
-- Use the Mintlify MCP server, `https://mcp.mintlify.com`, to edit content and settings via MCP
-- Use the Mintlify docs MCP server, `https://www.mintlify.com/docs/mcp`, to query information about using Mintlify via MCP
+Customer-facing help for clinic staff (office manager, front desk, medical
+assistant, provider). Built on [Mintlify](https://mintlify.com): MDX pages with
+YAML frontmatter, configuration in `docs.json`. Preview with `npx mint dev`
+and check links with `npx mint broken-links`.
 
 ## Terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- **Operant Health** is the company and the name of this help center.
+- **OrthOS** is the name the iPhone and iPad app shows today (home screen,
+  sign-in screen, iOS Settings). Use it wherever the reader needs to match
+  what's on screen. When the app is renamed, replace it across every page.
+- "Note" in prose; **Report** only where the UI says it (the **Reports** tab,
+  **Generate report**).
+- "Practice", not "clinic" or "organization".
 
-## Style preferences
+## Accuracy rules
 
-{/* Add any project-specific style rules below */}
+- Every UI label in bold must match the app exactly. Check the app's source
+  before adding or changing a step. If you can't confirm a label, leave the
+  step out.
+- Document only what a new practice gets on day one. No roadmap, "coming
+  soon", or features that are switched off by default.
+- No security or compliance claims (HIPAA, BAA, SOC 2, encryption specifics)
+  unless the founder has confirmed them in writing.
+- Screenshots come from the demo environment only. Never show real patient
+  data.
+- When a product change alters what users see or do, update the matching page
+  and merge it once the change reaches production.
 
-- Use active voice and second person ("you")
-- Keep sentences concise — one idea per sentence
-- Use sentence case for headings
-- Bold for UI elements: Click **Settings**
-- Code formatting for file names, commands, paths, and code references
+## Style
 
-## Content boundaries
-
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Second person, active voice, sentence-case headings.
+- Terse: one idea per sentence, steps over paragraphs.
+- Bold for UI elements: tap **Save**.
+- Lead with what the reader is trying to do, not with how the product works.

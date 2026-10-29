@@ -1,0 +1,53 @@
+---
+title: "Send notes to your EHR"
+description: "Insert a note into Practice Fusion, or copy it into any other EHR."
+---
+
+## Practice Fusion
+
+The **OrthOS EHR Bridge** Chrome extension puts your note into the Practice Fusion encounter and imports your Practice Fusion agenda. Your Operant Health contact will send you the install link.
+
+Before you start, make sure your practice's schedule time zone is set and your providers are on your team. See [set up your practice](/get-started/set-up-your-practice).
+
+### Connect the extension
+
+1. In Chrome, open the extension and click **Connect OrthOS**.
+2. A page asks **Connect the OrthOS Chrome extension?** Click **Approve connection**.
+3. The first time you use it, Chrome asks for access to Practice Fusion. Allow it.
+
+### Insert a note
+
+<Steps>
+  <Step title="Open the encounter">
+    In Practice Fusion, open the patient's encounter and put it in edit mode.
+  </Step>
+  <Step title="Find the note">
+    Open the extension and click **Find visit note**. It matches on the patient's name, date of birth and visit date. If it can't find a match, use **Find a report to copy**.
+  </Step>
+  <Step title="Insert it">
+    Review the note and click **Insert into note**. The text is added after anything already in the encounter.
+  </Step>
+  <Step title="Save and sign in Practice Fusion">
+    The extension never saves or signs anything in Practice Fusion. Do that there, as you normally would.
+  </Step>
+</Steps>
+
+You can insert a draft as well as a signed note. A signed Practice Fusion encounter can't be changed.
+
+To leave out the encounter date and divider above each SOAP section, go to **Settings** → **Profile & Practice** and clear **Include encounter date and divider above each SOAP section**, then click **Save insertion settings**.
+
+### Import your schedule
+
+On the Practice Fusion agenda, open the extension and click **Import schedule**. Review the visits, then confirm. It imports up to 100 visible rows at a time.
+
+### If the extension says your session expired
+
+You'll see **Session expired — Reconnect OrthOS before continuing.** Connect it again, as above.
+
+## Any other EHR
+
+Open the note and use **Export**:
+
+- **Copy (rich text)** keeps headings and formatting. Paste it into your EHR's note.
+- **Copy plain text** for EHRs that don't accept formatting.
+- **PDF preview** to save or attach the note as a PDF.

@@ -1,10 +1,10 @@
 ---
 title: "Templates and macros"
-description: "Create and manage report templates and reusable macros so OrthOS drafts notes in your exact structure and wording."
+description: "Create and manage report templates and reusable macros so Operant Health drafts notes in your exact structure and wording."
 sidebarTitle: "Templates and macros"
 ---
 
-Templates and macros are the foundation of how OrthOS writes your clinical reports. A template is the overall structure of a report, such as a new patient consult or an operative report. A macro is a reusable block of text, such as a procedure narration or a physical exam description, that OrthOS inserts into a report when the transcript mentions the right trigger phrases.
+Templates and macros are the foundation of how Operant Health writes your clinical reports. A template is the overall structure of a report, such as a new patient consult or an operative report. A macro is a reusable block of text, such as a procedure narration or a physical exam description, that Operant Health inserts into a report when the transcript mentions the right trigger phrases.
 
 You build and edit templates and macros on the web. The iPad and iPhone apps let you browse them but not edit them.
 
@@ -12,18 +12,18 @@ You build and edit templates and macros on the web. The iPad and iPhone apps let
 
 A template defines the sections of a report and how they should be arranged. For example, a new patient consult template might include Chief Complaint, History of Present Illness, Review of Systems, Past Medical History, Physical Exam, Assessment, and Plan. An operative report template includes Preoperative Diagnosis, Procedure, Anesthesia, Findings, and Postoperative Plan.
 
-Each template can also have AI instructions: rules that tell OrthOS how to fill the template. For example, you can add a rule that says "If a tourniquet was used, add the tourniquet sentence to the pre-op paragraph." These instructions guide report generation but never appear in the final report itself.
+Each template can also have AI instructions: rules that tell Operant Health how to fill the template. For example, you can add a rule that says "If a tourniquet was used, add the tourniquet sentence to the pre-op paragraph." These instructions guide report generation but never appear in the final report itself.
 
 ## What macros are
 
-A macro is a prewritten block of text that OrthOS inserts word for word when it recognizes the right procedure or topic in the transcript. For example, if you have a macro for ACL reconstruction with BTB autograft, OrthOS inserts your exact narration whenever the transcript mentions that procedure.
+A macro is a prewritten block of text that Operant Health inserts word for word when it recognizes the right procedure or topic in the transcript. For example, if you have a macro for ACL reconstruction with BTB autograft, Operant Health inserts your exact narration whenever the transcript mentions that procedure.
 
 Each macro has:
 
 - A name
 - A category, such as Operative Narrations, Proposed Procedures, Physical Exams, or Post-Op
 - A body region, such as Knee, Shoulder, or Foot & Ankle
-- Trigger phrases that help OrthOS match the macro to what was said
+- Trigger phrases that help Operant Health match the macro to what was said
 - The macro content itself
 
 ## Create or edit a template
@@ -39,10 +39,10 @@ Each macro has:
     Give the template a clear name and select the encounter type it belongs to, such as New Patient, Operative Report, or Follow-Up Visit.
   </Step>
   <Step title="Edit the content">
-    Use the editor to write the report skeleton. You can type text, add headings, and insert placeholders for fields that OrthOS will fill from the transcript.
+    Use the editor to write the report skeleton. You can type text, add headings, and insert placeholders for fields that Operant Health will fill from the transcript.
   </Step>
   <Step title="Add AI instructions (optional)">
-    Switch to the **Report-wide rules** tab to add rules that guide how OrthOS fills the template. These are separate from the report text itself.
+    Switch to the **Report-wide rules** tab to add rules that guide how Operant Health fills the template. These are separate from the report text itself.
   </Step>
   <Step title="Save">
     Click **Save**. The template is available immediately for the next report.
@@ -59,10 +59,10 @@ Each macro has:
     Click **New Macro** to create a blank macro.
   </Step>
   <Step title="Fill in the details">
-    Enter the macro name, choose or type a category, select a body region if applicable, and add trigger phrases separated by commas. Trigger phrases are the words OrthOS listens for in the transcript to decide when to use this macro.
+    Enter the macro name, choose or type a category, select a body region if applicable, and add trigger phrases separated by commas. Trigger phrases are the words Operant Health listens for in the transcript to decide when to use this macro.
   </Step>
   <Step title="Write the macro content">
-    Type the full text that OrthOS should insert. This text is used verbatim. It is your own wording, not rewritten by OrthOS.
+    Type the full text that Operant Health should insert. This text is used verbatim. It is your own wording, not rewritten by Operant Health.
   </Step>
   <Step title="Save">
     Click **Save**.
@@ -77,7 +77,7 @@ To archive, open the template or macro and click the delete icon. Confirm the ac
 
 ## How templates and macros are used in reports
 
-When OrthOS processes a visit, it does the following:
+When Operant Health processes a visit, it does the following:
 
 1. Classifies the encounter type, such as new patient consult or operative report.
 2. Selects the matching template.
@@ -86,7 +86,7 @@ When OrthOS processes a visit, it does the following:
 5. Fills any placeholders from what was said during the visit.
 6. Follows the AI instructions you added to the template.
 
-If the transcript does not mention a topic, that section is left blank. OrthOS does not invent information.
+If the transcript does not mention a topic, that section is left blank. Operant Health does not invent information.
 
 ## Mobile access
 

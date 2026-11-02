@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "OrthoOS Help Center",
+  "name": "Operant Health Help Center",
   "description": "Help for practices using Operant Health: setup, rollout, recording visits, notes, intake and troubleshooting.",
   "colors": {
     "primary": "#3C583E",
@@ -65,7 +65,6 @@
           "notes/forms-and-guides"
         ]
       },
-      "getting-started/devices",
       {
         "group": "Running your practice",
         "pages": [
@@ -75,42 +74,28 @@
         ]
       },
       {
-        "group": "Getting started",
-        "pages": [
-          "troubleshooting/common-issues"
-        ]
-      },
-      {
-        "group": "For clinicians",
-        "pages": [
-          "clinicians/schedule",
-          "clinicians/recording",
-          "clinicians/reports",
-          "clinicians/post-visit",
-          "clinicians/patients-and-cases"
-        ]
-      },
-      {
         "group": "For practice staff and admins",
         "pages": [
           "practice/setup",
           "practice/templates-and-macros",
-          "practice/visit-types",
-          "practice/intake-forms",
-          "practice/documents",
-          "practice/integrations"
+          "practice/visit-types"
         ]
       },
       {
-        "group": "For patients",
+        "group": "Help",
         "pages": [
-          "patients/check-in",
-          "patients/visit-guide"
+          "troubleshooting/common-issues"
         ]
       }
     ]
   },
   "navbar": {
+    "links": [
+      {
+        "label": "Contact support",
+        "href": "mailto:support@operanthealth.com"
+      }
+    ],
     "primary": {
       "type": "button",
       "label": "Sign in",

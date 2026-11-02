@@ -1,0 +1,79 @@
+---
+title: "Visit types"
+description: "Create and manage visit types, then map each one to a report template so OrthOS knows how to draft the right note for every appointment."
+sidebarTitle: "Visit types"
+---
+
+Visit types are the appointment labels your practice uses every day, such as New Patient Consult, Follow-Up Visit, or Post-Op Check. Each visit type can be mapped to a report template so OrthOS knows exactly how to structure the draft when it processes a recording.
+
+You manage visit types on the web at **Settings > Visit types & report templates**. Administrators can also manage them on iPad and iPhone from **Settings > Visit types**.
+
+## Create a visit type
+
+<Steps>
+  <Step title="Open visit types">
+    On the web, go to **Settings**, then select **Visit types & report templates**. On iPad or iPhone, go to **Settings** and tap **Visit types**.
+  </Step>
+  <Step title="Add a new type">
+    Click or tap **Add type**.
+  </Step>
+  <Step title="Enter the label">
+    Type a clear name, such as "Six-week postoperative follow-up" or "New patient consult — knee."
+  </Step>
+  <Step title="Choose the kind">
+    Select the encounter kind that best matches this appointment. The options are:
+
+    - New Patient
+    - Follow-Up
+    - Pre-Op
+    - Procedure Note
+    - Operative Report
+  </Step>
+  <Step title="Map to a template (optional)">
+    Choose a practice template if you want this visit type to always use a specific report structure. If you leave it as **Automatic**, OrthOS will select the best template based on the encounter kind.
+  </Step>
+  <Step title="Set a default duration (optional)">
+    Enter the typical appointment length in minutes. This is optional and helps with scheduling.
+  </Step>
+  <Step title="Save">
+    Click or tap **Save visit type**.
+  </Step>
+</Steps>
+
+## Edit a visit type
+
+To change a visit type, find it in the list and select **Edit**. You can update the label, kind, mapped template, or duration. Save your changes when you are done.
+
+## Set a default visit type
+
+The default visit type is used when an appointment does not match any practice visit type, or when staff create a visit without selecting a type. A matching type or a staff selection always takes priority over the default.
+
+To set the default, go to the visit types list and use the **Default visit type** selector at the top. Choose any active type, or leave it as **Automatic** to fall back to Follow-Up when available.
+
+## Reorder visit types
+
+On the web, use the up and down arrows next to each visit type to change the order. This controls how the types appear in appointment pickers throughout OrthOS.
+
+## Archive a visit type
+
+If a visit type is no longer needed, you can archive it. Archived types are hidden from pickers, but any existing visits that used that type keep their label.
+
+To archive, select the visit type and click or tap **Archive**. Confirm the action.
+
+<Note>
+  Only administrators can create, edit, archive, and reorder visit types. Non-admin users can view the list and see which templates are mapped.
+</Note>
+
+## How visit types are used
+
+When staff schedule an appointment or start a recording, they can choose a visit type. OrthOS uses that choice to:
+
+1. Select the right report template.
+2. Set the correct encounter kind for classification.
+3. Apply any default duration for scheduling.
+
+If no visit type is selected, OrthOS falls back to the default type or automatically classifies the encounter based on what was said during the visit.
+
+<Tip>
+  Create visit types for the appointments you see most often. Even a small set, such as New Patient, Follow-Up, and Operative Report, will make scheduling and report generation smoother.
+</Tip>

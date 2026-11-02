@@ -1,0 +1,117 @@
+---
+title: "Setting up your practice"
+description: "Create your practice, complete guided onboarding, and invite your team so everyone can start using OrthOS."
+sidebarTitle: "Setup"
+---
+
+OrthoOS walks you through practice setup when you first sign in. You can also update these settings later from the web app. This guide covers the initial onboarding, managing your practice profile, inviting team members, choosing how reports should sound, and setting recording preferences.
+
+## Sign up and sign in
+
+Go to [orthoshealth.ai](https://orthoshealth.ai) and click **Sign in**. If your practice is new, follow the prompts to create an account and start the guided setup.
+
+## Guided onboarding
+
+The onboarding has several steps. Required steps are marked. You can move between steps using the sidebar and your progress is saved automatically.
+
+<Steps>
+  <Step title="Profile">
+    Enter your full name and professional title, then choose your primary role. The person who completes this step becomes the default physician for new reports and practice setup decisions.
+  </Step>
+  <Step title="Practice">
+    Enter your practice name, address, city, and state. You can also add your phone number and website.
+  </Step>
+  <Step title="Discovery (optional)">
+    You can add your practice website to queue a review. This step is optional and can be skipped.
+  </Step>
+  <Step title="Team (optional)">
+    Add staff who should help with schedule, intake, recordings, or reports. For each person, enter their name, email, and role. You can also invite team members later from settings.
+  </Step>
+  <Step title="Preferences (optional)">
+    Choose your specialties, body regions, languages, audio quality, and the default report style you prefer. These help OrthOS optimize templates and macros for your practice.
+  </Step>
+  <Step title="Brand (optional)">
+    Upload your practice logo. It appears on patient-facing forms and generated documents. The file must be a PNG, JPEG, or WebP image and no larger than 500 KB.
+  </Step>
+  <Step title="Launch">
+    Set your target launch date, launch owner, schedule source, and how you plan to file reports. This step is required.
+  </Step>
+  <Step title="Tour (optional)">
+    Preview the workspace so your first session starts with the right mental model.
+  </Step>
+</Steps>
+
+At the end of onboarding, you can optionally choose **Make my notes sound like me**. This opens AI Settings so you can upload past notes and review writing preferences. You can also do this later.
+
+## Practice profile and logo
+
+After onboarding, update your practice details at any time by going to **Settings** and selecting **Profile & Practice**.
+
+You can edit:
+
+- Practice name
+- Website
+- About description
+- Contact details: phone, fax, street address, city, state, and ZIP code
+- Practice logo: upload, replace, or remove
+- Default provider: the provider used when staff create a visit without selecting a treating provider
+- Schedule timezone: the timezone used to interpret wall-clock times from imported schedules
+
+Contact details appear on patient-facing guides and printed forms so patients and referring offices can reach you.
+
+## Inviting team members and roles
+
+To add or manage team members, go to **Settings** and select **Users**.
+
+<Steps>
+  <Step title="Add a user">
+    Click **Add user**, then enter the person's name, email, and role.
+  </Step>
+  <Step title="Send the invitation">
+    Click **Send invitation**. They receive a one-time link to create their password.
+  </Step>
+  <Step title="Manage existing users">
+    From the user list, you can edit a person's name, email, or role. You can also resend an invitation if someone has not activated their account yet.
+  </Step>
+  <Step title="Deactivate or reactivate">
+    If someone should no longer use OrthOS, click **Deactivate**. Their clinical records and history remain intact, but they will be signed out and unable to sign back in. You can reactivate them later if needed.
+  </Step>
+</Steps>
+
+### Role descriptions
+
+Each team member has one of four roles:
+
+| Role | What they can do |
+| --- | --- |
+| Physician | Record visits, review and sign reports, access clinical workflows |
+| Physician Assistant (PA) | Record visits, review and sign reports, access clinical workflows |
+| Medical Assistant (MA) | Help with schedule, intake, recordings, and reports |
+| Administrator | Manage practice settings, users, templates, visit types, and integrations |
+
+## AI report style settings
+
+To control how OrthOS writes your reports, go to **Settings** and select **AI Settings**.
+
+You can manage:
+
+- **Physician memory**: Write rules in plain language that guide how OrthOS drafts your reports. These rules are organized into buckets such as Voice & Style, Report Structure, Physical Exam, Assessment & Plan, Follow-up Instructions, Billing, and Corrections.
+- **Report effort**: Choose how detailed you want drafts to be.
+- **Personal recall**: Turn on or off the use of your saved preferences when generating reports.
+
+You can also upload past SOAP notes so OrthOS learns your writing style.
+
+## Recording preferences
+
+To change how OrthOS handles audio, go to **Settings** and select **Recording**.
+
+You can choose between two transcription modes:
+
+- **Realtime transcription**: The transcript appears live while you are recording.
+- **Batch transcription**: The transcript is generated after you stop recording.
+
+In both modes, the audio file is preserved the same way. Only the transcript path differs.
+
+<Tip>
+  If you are not sure which mode to choose, start with batch transcription. It is simpler and works reliably in all environments.
+</Tip>

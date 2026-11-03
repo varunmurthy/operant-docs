@@ -8,9 +8,10 @@ and check links with `npx mint broken-links`.
 ## Terminology
 
 - **Operant Health** is the company and the name of this help center.
-- **OrthOS** is the name the iPhone and iPad app shows today (home screen,
-  sign-in screen, iOS Settings). Use it wherever the reader needs to match
-  what's on screen. When the app is renamed, replace it across every page.
+- **Operant Health** is also the name the iPhone and iPad app shows (home
+  screen, sign-in screen, iOS Settings). Running copy in the apps and the
+  Chrome extension (**Operant EHR Bridge**) uses "Operant". Match what's on
+  screen. The web app lives at operanthealth.com (formerly orthoshealth.ai).
 - "Note" in prose; **Report** only where the UI says it (the **Reports** tab,
   **Generate report**).
 - "Practice", not "clinic" or "organization".

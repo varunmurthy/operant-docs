@@ -20,7 +20,34 @@ Open **Settings** on the web.
 | **Patient Guide** | Your practice's design for post-visit guides. |
 | **Document Library** | Your forms, and the designer to build new ones. In beta. |
 | **AI Settings** | How notes are written, including your personal writing style. |
-| **Insurance & Billing** | Eligibility checks, if your practice uses them. Turn on **Enable eligibility checks** and add your **Provider NPI** and **Provider organization**. |
+| **Insurance & Billing** | Eligibility checks, if your practice uses them. See [eligibility checks](#eligibility-checks). |
 | **Review Collection** | Ask patients for reviews and collect testimonials. |
 
 In the app, **More** → **Settings** shows your account, practice and role, and your visit types.
+
+## Eligibility checks
+
+If your practice uses eligibility checks, set them up in **Settings** → **Insurance & Billing**:
+
+1. Turn on **Enable eligibility checks**.
+2. Add your **Provider organization** and **Provider NPI**.
+3. Leave **Run automatically when card details are ready** on to check coverage without waiting for staff.
+4. Choose how long to **Reuse recent results for**, then save.
+
+With automatic checks on, Operant Health runs a check as soon as a card scan clearly reads a supported payer and member ID. The result shows **Automatic** in the check history.
+
+### Card scans
+
+Upload card scans from the patient's **Insurance & eligibility** tab on the web. One image or PDF can hold both sides of the card. JPEG, PNG, WebP and PDF all work.
+
+A scan only fills in fields that are empty. If it reads something different from the saved record, the saved values are kept and the card shows **The scan differs from the saved record**. Open the card to compare.
+
+### Run or re-run a check
+
+On the **Insurance & eligibility** tab, pick the **Date of service** and **Service type**, then click **Run check** or **Re-run**. The service type starts on **Specialist office visit**. Benefits for the service you checked are listed first.
+
+Click the star on a benefit to pin it. Stars set before this update were reset, so star your key benefits again.
+
+### Missing information
+
+If a patient's ID or insurance is incomplete, the tab lists it under **Missing information**. Click **Add missing items to Tasks** to queue a follow-up for your front desk. See [tasks](/practice/tasks).

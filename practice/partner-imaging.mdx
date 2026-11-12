@@ -1,0 +1,151 @@
+---
+title: "PACS administrator connection guide"
+sidebarTitle: "Imaging partners"
+description: "Configure a partner DICOM connection with Operant Health, confirm practice destinations, and validate study delivery with a clear acceptance checklist."
+keywords:
+  - "PACS"
+  - "DICOM"
+  - "imaging partner"
+  - "VPN"
+  - "AE title"
+  - "C-STORE"
+---
+
+Use this guide if you administer a PACS or DICOM router and need to send studies to Operant Health for a referring practice. It applies to SimonMed and other imaging partners. Your Operant Health contact will supply a connection sheet with the addresses, AE titles and ports assigned to your organization.
+
+<Note>
+  Connections are currently being commissioned. Start with synthetic studies and wait for explicit activation confirmation before sending patient data. Receiving a study and filing it in the application are separate steps; automatic patient/case filing is not yet available.
+</Note>
+
+## 1. Exchange the connection information
+
+Nominate a PACS administrator and a network/VPN administrator. Agree on a testing window and include time zones in all scheduling and diagnostic timestamps.
+
+### Information we need from you
+
+| Area | Details to provide |
+| --- | --- |
+| Organization and practices | Sending facilities and the referring practices that should receive studies |
+| Contacts | PACS and network contacts, testing availability and escalation contact |
+| VPN | Public peer address, IKE version and identities, proposed cryptographic settings, lifetimes, PFS setting and traffic selectors/proxy IDs |
+| Routing and NAT | Actual DICOM sending addresses as seen across the tunnel, including any translated addresses |
+| DICOM sender | Calling AE title or titles for every sender or routing node |
+| Content | Required modalities, storage SOP classes, transfer syntaxes, and representative compressed or multiframe objects |
+| Reconciliation | Available accession/order identifiers, patient identifier issuer and referring-practice identifiers |
+| Volume and retries | Expected daily study volume, typical and largest study sizes, peak activity and sender retry behavior |
+
+Describe identifiers and provide synthetic examples during setup. Exchange patient information only through the agreed secure support channel.
+
+### Information we provide
+
+Your connection sheet will contain:
+
+- Our public VPN peer address and the agreed tunnel parameters.
+- The private DICOM destination address.
+- The exact called AE title and TCP port assigned to each practice.
+- The approved calling AE titles and source addresses.
+- The agreed test cases, activation window and technical contact.
+
+<Warning>
+  The public VPN peer address and private DICOM destination serve different purposes. Use the private destination from your connection sheet as the PACS DICOM host. Do not guess an AE title or assume a standard TCP port.
+</Warning>
+
+Exchange shared keys through the agreed secure channel. Never put keys, credentials or patient data in public documentation, public tickets or screenshots.
+
+## 2. Agree on routing for each practice
+
+Configure one destination entry for each referring practice using the exact address, called AE title and TCP port we assign. Several practice destinations may share an IP address.
+
+Match the called and calling AE titles exactly, including case. Our onboarding profile uses titles with 1 to 16 letters, digits, underscores or hyphens. Tell us before testing if your existing titles use another format.
+
+Route each study according to the agreed referring-practice mapping. Patient names, medical record numbers and referrer text alone are insufficient to identify the receiving organization.
+
+If your PACS or router requires one TCP port for all practices, tell us before configuration so we can assess compatibility. Do not combine practice destinations or reuse another practice's assigned endpoint.
+
+## 3. Configure the VPN and DICOM destination
+
+<Steps>
+  <Step title="Confirm the VPN profile">
+    Have both network administrators confirm the peer addresses, IKE identities, cryptographic settings, lifetimes, PFS and traffic selectors/proxy IDs. Confirm the actual sender addresses after any NAT.
+  </Step>
+  <Step title="Establish the agreed private route">
+    Verify the tunnel and routing on both sides. A tunnel showing connected does not by itself prove that the DICOM destination is reachable.
+  </Step>
+  <Step title="Create the PACS destination">
+    Enter the assigned private host, TCP port and called AE title. Select the approved calling AE for outbound associations. Use the agreed IPsec connection for DICOM traffic.
+  </Step>
+  <Step title="Run C-ECHO">
+    Test each assigned practice destination and record the result. C-ECHO verifies connectivity and association behavior; it does not confirm study storage or application filing.
+  </Step>
+</Steps>
+
+If your security policy requires DICOM TLS in addition to the agreed VPN, raise that requirement before setup so compatibility can be assessed.
+
+## DICOM service scope
+
+| Service | Scope of this connection |
+| --- | --- |
+| C-ECHO | Connectivity testing |
+| C-STORE | Inbound study-instance delivery |
+| C-FIND, C-GET and C-MOVE | Not offered by this ingress |
+| Modality worklist | Not offered by this ingress |
+| Storage Commitment | Not offered by this ingress |
+| DICOMweb | Not provided as part of this connection |
+
+Share your DICOM conformance statement where available. Verify the required SOP classes and transfer syntaxes with representative test studies; do not assume that successful delivery of one modality validates every object type. No automatic transcoding is offered by this connection.
+
+## 4. Complete acceptance testing
+
+Use synthetic studies that include the modalities, compression and multiframe content you plan to send. Agree on expected instance counts before each test.
+
+| Test | Acceptance evidence |
+| --- | --- |
+| Connectivity | C-ECHO succeeds for every assigned destination |
+| Study delivery | Review the C-STORE response for every instance, then reconcile the expected and received counts |
+| Content | Both teams verify representative datasets and pixel content |
+| Practice routing | Each test study reaches only its intended practice destination |
+| Rejection | With the technical team, test incorrect or unregistered destinations and confirm rejection |
+| Retry and late arrivals | Interrupt a test transfer, resume using the sender's agreed retry behavior, resend an unchanged instance, and reconcile any late-arriving instances |
+| Recovery | Coordinate a connection interruption or rekey test and verify resumed delivery |
+
+Record results with the test time and time zone, sender, destination and DICOM status. Both teams must confirm acceptance before activating a live feed.
+
+## Delivery responses, retries and corrections
+
+A successful C-STORE response applies to the individual instance accepted by the receiver. It does not prove that a whole study has arrived, that a patient/case match is correct, or that downstream application filing is complete. Reconcile study-level instance counts with our technical team.
+
+For a failed association, failed C-STORE response, timeout or missing acknowledgement, retain the study in your sending system and follow the agreed reconciliation and retry process. A missing response proves neither delivery nor non-receipt: the receiver may have stored an instance before the response was lost. Do not mark unconfirmed instances as delivered.
+
+Unchanged retries should retain the original DICOM identifiers. For corrections, do not assume that sending different content with the same instance identity will overwrite a previous delivery. A repeated instance can receive a success response while the first stored object is retained. Contact us to agree on a correction or resend plan.
+
+## Troubleshooting
+
+| Symptom | Checks for the PACS/network administrator |
+| --- | --- |
+| VPN is down | Compare the agreed peer, IKE identity, cryptographic, lifetime and selector settings on both sides |
+| VPN is up but DICOM times out | Verify the private destination, assigned TCP port, routing and sender/NAT address |
+| Association or storage is refused | Check the exact calling and called AE titles, approved sender address, and returned DICOM status |
+| Only part of a study arrives | Reconcile expected counts and review the response and retry state for each failed instance |
+| C-STORE succeeds but the image is not visible in the app | Ask us to verify receipt and the separate application import workflow |
+
+When requesting help, provide the timestamp with time zone, facility, intended practice, calling AE, called AE, destination and error/status code through your agreed support channel. Provide relevant SOP class or transfer syntax details when a content-specific failure occurs. Do not include credentials or patient demographics in public tickets.
+
+## Before sending patient studies
+
+- Confirm the assigned practice destinations and referring-practice routing.
+- Complete synthetic acceptance testing with both technical teams.
+- Agree on monitoring, retries, reconciliation and escalation responsibilities.
+- Confirm that the required data-sharing arrangements and approvals are in place.
+- Wait for explicit activation confirmation and confirm the application import workflow.
+
+## Copyable onboarding request
+
+Send this to your Operant Health implementation contact:
+
+> We would like to connect our PACS/router to send DICOM studies for the following practices: [practice names].
+>
+> Our PACS contact is [name and contact], and our network/VPN contact is [name and contact].
+>
+> We can provide our VPN profile, sender/NAT addresses, calling AE titles, DICOM conformance statement, required object types and estimated study volume.
+>
+> Please provide the assigned receiver connection sheet and propose a synthetic testing window. Our routing constraints are [separate destinations supported, or describe constraints].
